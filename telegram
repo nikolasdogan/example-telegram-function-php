@@ -1,0 +1,20 @@
+    <?php
+    function TelegramBildirim($body){
+        $token = '111111111:sdiflsdifdlsiflilifsdlfisdlşfi'; // token_telegram_group
+        $user_id = -00000000000; // users_telegram_id
+       //ATS-CRM Telegram Grup a basar $user_id = '-00000000' 
+        $msg = $body.'@USERNAME tag';
+        $request_params = [
+          'chat_id' => $user_id,
+          'text' => $msg
+        ];
+        //////////////////////////////////
+          $request_url = 'https://api.telegram.org/bot'.$token.'/sendMessage?'.http_build_query($request_params);
+        
+          file_get_contents($request_url);
+    
+    }
+    $body = "text";
+    TelegramBildirim($body);
+    
+    ?>
